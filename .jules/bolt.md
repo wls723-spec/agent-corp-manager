@@ -1,0 +1,3 @@
+## 2024-05-18 - Offscreen Canvas Caching for Static Backgrounds
+**Learning:** Drawing hundreds of individual map tiles per frame using `ctx.drawImage` is highly CPU-intensive and can cause lag in standard 2D top-down games, especially in HTML5 canvas. Rendering a static background to an offscreen canvas and drawing that entire canvas at once dramatically reduces draw calls (from hundreds to just 1) without losing visual fidelity.
+**Action:** Next time I work on a grid-based tile map that doesn't change frequently, I should pre-render it to an off-screen canvas during initialization to save frame processing time.
